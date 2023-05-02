@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  line-height: 1;
+
+  font-family: monospace, 'Times New Roman', Times, serif;
+  color: whitesmoke;
+}
+
+.flex {
+  display: flex;
+}
+
+.box {
+  margin: 0 auto;
+  width: 90%;
+}
+
+h3 {
+  font-size: 3em;
+}
+
+.page {
+  position: relative;
+  height: 100vh;
+}
+
+header {
+  position: relative;
+  height: 80px;
+  background-color: #000;
+
+  z-index: 10;
+
+  color: whitesmoke;
+}
+
+.header_content {
+  position: absolute;
+  z-index: 10;
+
+  width: 100%;
+}
+
+.wave {
+  position: absolute;
+  width: 400%;
+  height: 100%;
+  z-index: 5;
+
+  background-image: url("./assets/img/base/caustic.png");
+  background-size: auto 100% ;
+  background-position: 0 -10%;
+
+  animation: wave 45s linear infinite;
+
+  opacity: 0.5;
+}
+
+.wave_reverse{
+  animation: wave_reverse 45s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(-0%);
+  }
+}
+
+@keyframes wave_reverse {
+  0% {
+    transform: translateX(-0%);
+  }
+
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+
+  border: 2px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+
+  margin-right: 20px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+
+  background-size: contain;
+
+}
+
+.header_title {
+  padding: 10px 0;
+
+ 
+}
+
+.header_title_top {
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.header_title_bottom {
+  font-size: 1.5em;
+}
+
+main {
+  position: relative;
+  width: 100vw;
+  height: calc(100% - 80px);
+
+  display: flex;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+
+  background-color: rgba(200, 200, 200, 1);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.5s 0.5s ease-in-out;
+}
+
+main::after, main::before  {
+  /* content: ""; */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+
+  /* background: url("/assets/img/def/pngwing.com (1).png") repeat-y; */
+  background-position-x: 10%;
+  background-position-y: 10%;
+  background-size: cover;
+}
+
+main::after {
+  /* animation: slideA 5s linear infinite; */
+}
+
+main::before {
+  /* animation: slide 5s linear infinite; */
+}
+
+@keyframes slideA {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.slide.active {
+  top: 0;
+  transition-delay: 0s;
+}
+
+.slide:nth-child(1) {
+  background-color: rgba(50, 50, 100, 1);
+}
+
+.slide:nth-child(2) {
+  background-color: rgba(100, 100, 200, 1);
+}
+
+.slide:nth-child(3) {
+  background-color: rgba(150, 150, 200, 1);
+}
+
+.slide:nth-child(4) {
+  background-color: rgba(200, 200, 200, 1);
+}
+
+.article .slide:nth-child(1) {
+  background-color: rgba(60, 60, 120, 1);
+}
+
+.article .slide:nth-child(2) {
+  background-color: rgba(100, 100, 150, 1);
+}
+
+.article .slide:nth-child(3) {
+  background-color: rgba(130, 130, 180, 1);
+}
+
+.article .slide:nth-child(4) {
+  background-color: rgba(200, 200, 150, 1);
+}
+
+.article .slide {
+  top: -100%;
+}
+
+.article .slide.active {
+  top: 0%;
+}
+
+.header {
+  flex: 0.3;
+}
+
+.article {
+  flex: 0.7;
+}
+
+.gallery {
+  
+}
+
+.skills {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card_title {
+  text-align: center;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.skills {
+  
+}
+
+.social {
+  height: 80px;
+
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.social .icon {
+  background-color: #fff;
+  border-radius: 50%;
+  background-size: 100%;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.icon a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.icon_github {
+  background-image: url("./assets/img/base/social/icons8-github-150.png");
+ 
+}
+
+.icon_vk {
+  background-image: url("./assets/img/base/social/icons8-vk-circled-150.png");
+ 
+}
+
+.icon_telegram {
+  background-image: url("./assets/img/base/social/icons8-telegram-app-150.png");
+  background-position: -3px 2.5px;
+}
