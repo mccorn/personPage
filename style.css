@@ -35,6 +35,15 @@ header {
   z-index: 10;
 
   color: whitesmoke;
+ 
+}
+
+.header_back {
+  position: absolute;
+  overflow: hidden;
+
+  height: 100%;
+  width: 100%;
 }
 
 .header_content {
