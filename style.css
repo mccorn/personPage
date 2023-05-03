@@ -29,7 +29,7 @@
 }
 
 .block_gradient {
-  background: linear-gradient(to bottom, rgba(100, 100, 150, 1) 0%, rgba(100, 100, 150, 1) 45.5%, rgba(90, 90, 160, 0.8) 50.5%);
+  /* background: linear-gradient(to bottom, rgba(100, 100, 150, 1) 0%, rgba(100, 100, 150, 1) 45.5%, rgba(90, 90, 160, 0.8) 50.5%); */
 }
 
 h3 {
@@ -69,13 +69,12 @@ li {
 header {
   position: relative;
   height: 80px;
-  background-color: #000;
+  background-color: #090909;
 
-  z-index: 10;
+  z-index: 10; 
 
   color: whitesmoke;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
- 
 }
 
 .header_back {
@@ -110,26 +109,6 @@ header {
 
 .wave_reverse{
   animation: wave_reverse 45s linear infinite;
-}
-
-@keyframes wave {
-  0% {
-    transform: translateX(-10%);
-  }
-
-  100% {
-    transform: translateX(-0%);
-  }
-}
-
-@keyframes wave_reverse {
-  0% {
-    transform: translateX(-0%);
-  }
-
-  100% {
-    transform: translateX(-10%);
-  }
 }
 
 .avatar {
@@ -174,6 +153,8 @@ main {
 
   display: flex;
   overflow: hidden;
+
+  color: whitesmoke;
 }
 
 .slider {
@@ -200,82 +181,25 @@ main {
   transition: all 0.5s 0.5s ease-in-out;
 }
 
-main::after, main::before  {
-  /* content: ""; */
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-
-  /* background: url("/assets/img/def/pngwing.com (1).png") repeat-y; */
-  background-position-x: 10%;
-  background-position-y: 10%;
-  background-size: cover;
-}
-
-main::after {
-  /* animation: slideA 5s linear infinite; */
-}
-
-main::before {
-  /* animation: slide 5s linear infinite; */
-}
-
-@keyframes slideA {
-  0% {
-    transform: translateY(0%);
-  }
-
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes slide {
-  0% {
-    transform: translateY(100%);
-  }
-
-  100% {
-    transform: translateY(0%);
-  }
-}
-
 .slide.active {
   top: 0;
   transition-delay: 0s;
 }
 
-.slide:nth-child(1) {
-  background-color: rgba(50, 50, 100, 1);
+.slide:nth-child(odd) {
+  background-color: #E6A117;
 }
 
-.slide:nth-child(2) {
-  background-color: rgba(100, 100, 200, 1);
+.slide:nth-child(even) {
+  background-color: #F9CA6D;
 }
 
-.slide:nth-child(3) {
-  background-color: rgba(150, 150, 200, 1);
+.sliderBody .slide:nth-child(odd) {
+  background-color: #F9CA6D;
 }
 
-.slide:nth-child(4) {
-  background-color: rgba(200, 200, 200, 1);
-}
-
-.sliderBody .slide:nth-child(1) {
-  background-color: rgba(60, 60, 120, 1);
-}
-
-.sliderBody .slide:nth-child(2) {
-  background-color: rgba(100, 100, 150, 1);
-}
-
-.sliderBody .slide:nth-child(3) {
-  background-color: rgba(130, 130, 180, 1);
-}
-
-.sliderBody .slide:nth-child(4) {
-  background-color: rgba(200, 200, 150, 1);
+.sliderBody .slide:nth-child(even) {
+  background-color: #E6A117;
 }
 
 .sliderBody .slide {
@@ -307,10 +231,6 @@ main::before {
   text-align: center;
   font-weight: 600;
   text-transform: capitalize;
-}
-
-.skills {
-  
 }
 
 .social {
@@ -358,8 +278,27 @@ main::before {
 }
 
 .icon_hh a {
-  /* background-image: url("./assets/img/base/social/hh.ru__min_.svg"); */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(-0%);
+  }
+}
+
+@keyframes wave_reverse {
+  0% {
+    transform: translateX(-0%);
+  }
+
+  100% {
+    transform: translateX(-10%);
+  }
 }
