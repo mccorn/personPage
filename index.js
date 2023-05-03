@@ -1,54 +1,34 @@
 const state = {
-    leftSliderActiveIdx: 0,
-    rightSliderActiveIdx: 0,
-
     sliderActiveIdx: 0,
 }
 
-let leftSlider = document.getElementById('headerSlider');
-let leftSlides = leftSlider.querySelectorAll('.slide');
+let headerSlider = document.getElementById('headerSlider');
+let headerSlides = headerSlider.querySelectorAll('.slide');
 
-let rightSlider = document.getElementById('articleSlider');
-let rightSlides = rightSlider.querySelectorAll('.slide');
+let mainSlider = document.getElementById('articleSlider');
+let mainSlides = mainSlider.querySelectorAll('.slide');
 
-let counter = 0;
-
-for (let slide of leftSlides) {
-    slide.addEventListener('click', changeSlide)
-    if (slide.classList.contains('active')) { state.sliderActiveIdx = counter }
-
-    counter += 1;
-}
-
-counter = 0;
-for (let slide of rightSlides) {
-    slide.addEventListener('click', changeSlide)
-
-    slide.classList.remove('active')
-
-    if (counter === state.sliderActiveIdx) {
-        slide.classList.add('active')
+Array.from(headerSlides).forEach((slide, idx) => {
+    if (idx === state.sliderActiveIdx) {
+        headerSlides[idx].classList.add('active');
+        mainSlides[idx].classList.add('active');
+    } else {
+        headerSlides[idx].classList.remove('active');
+        mainSlides[idx].classList.remove('active');
     }
 
-    counter += 1;
-}
+    headerSlides[idx].addEventListener('click', changeSlide);
+    mainSlides[idx].addEventListener('click', changeSlide);
+})
 
 function changeSlide() {
     let oldIdx = state.sliderActiveIdx;
 
-    // console.log('changeSlide', state)
+    headerSlides[oldIdx].classList.remove('active');
+    mainSlides[oldIdx].classList.remove('active');
 
-    leftSlides[oldIdx].classList.remove('active');
-    rightSlides[oldIdx].classList.remove('active');
+    let newIdx = state.sliderActiveIdx = (oldIdx === mainSlides.length - 1) ? 0 : state.sliderActiveIdx + 1;
 
-    // console.log('old', oldIdx, leftSlides[oldIdx], rightSlides[oldIdx])
-
-    let newIdx = state.sliderActiveIdx = oldIdx === rightSlides.length - 1 ? 0 : state.sliderActiveIdx + 1;
-
-    leftSlides[newIdx].classList.add('active');
-    rightSlides[newIdx].classList.add('active');
-
-    // console.log('new', newIdx, leftSlides[newIdx], rightSlides[newIdx])
+    headerSlides[newIdx].classList.add('active');
+    mainSlides[newIdx].classList.add('active');
 }
-
-console.log('state', state)
