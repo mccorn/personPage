@@ -29,7 +29,7 @@
 }
 
 .block_gradient {
-  /* background: linear-gradient(to bottom, rgba(100, 100, 150, 1) 0%, rgba(100, 100, 150, 1) 45.5%, rgba(90, 90, 160, 0.8) 50.5%); */
+  background: linear-gradient(to bottom, #F9CA6D 0%, #F9CA6D 45.5%, #f7b634 50.5%);
 }
 
 h3 {
@@ -186,19 +186,19 @@ main {
   transition-delay: 0s;
 }
 
-.slide:nth-child(odd) {
+.slide:nth-child(even) {
   background-color: #E6A117;
 }
 
-.slide:nth-child(even) {
-  background-color: #F9CA6D;
-}
-
-.sliderBody .slide:nth-child(odd) {
+.slide:nth-child(odd) {
   background-color: #F9CA6D;
 }
 
 .sliderBody .slide:nth-child(even) {
+  background-color: #F9CA6D;
+}
+
+.sliderBody .slide:nth-child(odd) {
   background-color: #E6A117;
 }
 
@@ -216,10 +216,6 @@ main {
 
 .sliderBody {
   flex: 0.7;
-}
-
-.gallery {
-  
 }
 
 .skills {
