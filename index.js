@@ -1,5 +1,6 @@
 const state = {
     sliderActiveIdx: 0,
+    sliderDisabled: false,
 }
 
 let headerSlider = document.getElementById('headerSlider');
@@ -22,6 +23,14 @@ Array.from(headerSlides).forEach((slide, idx) => {
 })
 
 function changeSlide() {
+    if (state.sliderDisabled) return;
+
+    state.sliderDisabled = true;
+    let timer = setTimeout(() => {
+        state.sliderDisabled = false;
+        clearTimeout(timer);
+    }, 600);
+
     let oldIdx = state.sliderActiveIdx;
 
     headerSlides[oldIdx].classList.remove('active');

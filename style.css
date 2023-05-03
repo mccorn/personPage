@@ -13,18 +13,57 @@
   display: flex;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .box {
   margin: 0 auto;
   width: 90%;
+}
+
+.box_s {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.block_gradient {
+  background: linear-gradient(to bottom, rgba(100, 100, 150, 1) 0%, rgba(100, 100, 150, 1) 45.5%, rgba(90, 90, 160, 0.8) 50.5%);
 }
 
 h3 {
   font-size: 3em;
 }
 
+h5 {
+  font-size: 1.5em;
+  margin-bottom: 16px;
+  text-decoration: underline;
+}
+
+h6 {
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+li {
+  margin-left: 20px;
+  margin-bottom: 4px;
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
 .page {
   position: relative;
   height: 100vh;
+  min-width: 640px; 
+}
+
+.article {
+  margin-bottom: 16px;
 }
 
 header {
@@ -128,7 +167,6 @@ header {
 
 main {
   position: relative;
-  width: 100vw;
   height: calc(100% - 80px);
 
   display: flex;
@@ -221,27 +259,27 @@ main::before {
   background-color: rgba(200, 200, 200, 1);
 }
 
-.article .slide:nth-child(1) {
+.sliderBody .slide:nth-child(1) {
   background-color: rgba(60, 60, 120, 1);
 }
 
-.article .slide:nth-child(2) {
+.sliderBody .slide:nth-child(2) {
   background-color: rgba(100, 100, 150, 1);
 }
 
-.article .slide:nth-child(3) {
+.sliderBody .slide:nth-child(3) {
   background-color: rgba(130, 130, 180, 1);
 }
 
-.article .slide:nth-child(4) {
+.sliderBody .slide:nth-child(4) {
   background-color: rgba(200, 200, 150, 1);
 }
 
-.article .slide {
+.sliderBody .slide {
   top: -100%;
 }
 
-.article .slide.active {
+.sliderBody .slide.active {
   top: 0%;
 }
 
@@ -249,7 +287,7 @@ main::before {
   flex: 0.3;
 }
 
-.article {
+.sliderBody {
   flex: 0.7;
 }
 
@@ -305,15 +343,20 @@ main::before {
 
 .icon_github {
   background-image: url("./assets/img/base/social/icons8-github-150.png");
- 
 }
 
 .icon_vk {
   background-image: url("./assets/img/base/social/icons8-vk-circled-150.png");
- 
 }
 
 .icon_telegram {
   background-image: url("./assets/img/base/social/icons8-telegram-app-150.png");
   background-position: -3px 2.5px;
+}
+
+.icon_hh a {
+  /* background-image: url("./assets/img/base/social/hh.ru__min_.svg"); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
